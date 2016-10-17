@@ -2,8 +2,6 @@
 title: '6060 Practice: RMarkdown'
 author: "Janie Vu"
 output:
-  html_document:
-    toc_depth: '3'
   pdf_document:
     number_sections: yes
     toc_depth: 3
@@ -13,6 +11,7 @@ output:
 library(tidyverse)
 library(apaTables)
 analytic_data_female        <- read_csv("quiz2_analytic_data_female.csv")
+
 ```
 
 # **Relations among variables for women**
