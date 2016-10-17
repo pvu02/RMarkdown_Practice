@@ -2,19 +2,17 @@
 title: '6060 Practice: RMarkdown'
 author: "Janie Vu"
 output:
+  html_document:
+    toc_depth: '3'
   pdf_document:
     number_sections: yes
     toc_depth: 3
-  html_document:
-    toc_depth: '3'
 ---
 
 ```{r,echo=FALSE,message=FALSE, warning=FALSE}
-
 library(tidyverse)
 library(apaTables)
-
-analytic_data_female        <- read_csv("analytic_data_female.csv")
+analytic_data_female        <- read_csv("quiz2_analytic_data_female.csv")
 ```
 
 # **Relations among variables for women**
@@ -33,7 +31,6 @@ psych::pairs.panels(as.data.frame(analytic_data_female),lm=FALSE)
 Below we can see the distribution of negative affect scores is skewed.
 
 ```{r, echo=FALSE, message=FALSE, warning=FALSE}
-analytic_data_female        <- read_csv("quiz2_analytic_data_female.csv")
 my.hist <- ggplot(analytic_data_female,aes(neg_affect))
 my.hist <- my.hist + geom_histogram(aes(y= ..count..), binwidth= .1, fill="gray30", color="gray30")
 my.hist <- my.hist + labs(x="Negative Affect", y="Frequency")
